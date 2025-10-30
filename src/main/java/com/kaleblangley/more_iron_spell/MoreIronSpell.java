@@ -1,6 +1,8 @@
 package com.kaleblangley.more_iron_spell;
 
+import com.kaleblangley.more_iron_spell.common.init.TranslateInit;
 import com.kaleblangley.more_iron_spell.common.init.register.AttributeInit;
+import com.kaleblangley.more_iron_spell.common.init.register.ItemInit;
 import com.kaleblangley.more_iron_spell.common.init.register.SchoolInit;
 import com.kaleblangley.more_iron_spell.common.init.register.SpellInit;
 import net.minecraft.resources.ResourceLocation;
@@ -19,9 +21,11 @@ public class MoreIronSpell {
     public MoreIronSpell(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
+        ItemInit.register(modEventBus);
         AttributeInit.register(modEventBus);
         SchoolInit.register(modEventBus);
         SpellInit.register(modEventBus);
+        TranslateInit.init();
     }
 
     public static ResourceLocation modLoc(String path) {

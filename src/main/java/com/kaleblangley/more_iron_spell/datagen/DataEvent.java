@@ -20,8 +20,9 @@ public class DataEvent {
         ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
-
+        generator.addProvider(event.includeServer(), new CuriosProvider(packOutput, existingFileHelper, lookupProvider));
 
         generator.addProvider(event.includeClient(), new ChineseLanguageProvider(packOutput));
+        generator.addProvider(event.includeClient(), new EnglishLanguageProvider(packOutput));
     }
 }

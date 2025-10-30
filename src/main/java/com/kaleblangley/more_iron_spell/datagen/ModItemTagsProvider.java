@@ -2,6 +2,7 @@ package com.kaleblangley.more_iron_spell.datagen;
 
 import com.kaleblangley.more_iron_spell.MoreIronSpell;
 import com.kaleblangley.more_iron_spell.common.init.ItemTagInit;
+import com.kaleblangley.more_iron_spell.common.init.register.ItemInit;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -21,6 +22,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
-        tag(ItemTagInit.ORIGIN_FOCUS).add(Items.NETHER_STAR).replace(false);
+        tag(ItemTagInit.ORIGIN_FOCUS)
+                .replace(false)
+                .add(Items.NETHER_STAR);
+
+        tag(ItemTagInit.MAGIC_TOOL_CURIOS)
+                .replace(false)
+                .add(ItemInit.DOUBLE_DOOR.get());
     }
 }

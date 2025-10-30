@@ -18,11 +18,11 @@ import net.minecraftforge.registries.RegistryObject;
 public class SchoolInit {
     public static final DeferredRegister<SchoolType> SCHOOL = DeferredRegister.create(SchoolRegistry.SCHOOL_REGISTRY_KEY, MoreIronSpell.MODID);
 
-    public static final ResourceLocation ORIGIN = MoreIronSpell.modLoc("origin");
+    public static final ResourceLocation ORIGIN_RESOURCE = MoreIronSpell.modLoc("origin");
 
     public static final RegistryObject<SchoolType> ORIGIN_SCHOOL = registerSchool(
             new SchoolType(
-                    ORIGIN,
+                    ORIGIN_RESOURCE,
                     ItemTagInit.ORIGIN_FOCUS,
                     Component.translatable(TranslateInit.ORIGIN_SCHOOL).withStyle(ChatFormatting.WHITE),
                     LazyOptional.of(AttributeInit.ORIGIN_POWER::get),
