@@ -2,6 +2,7 @@ package com.kaleblangley.more_iron_spell.datagen;
 
 import com.kaleblangley.more_iron_spell.MoreIronSpell;
 import com.kaleblangley.more_iron_spell.common.init.ItemTagInit;
+import com.kaleblangley.more_iron_spell.common.init.TranslateInit;
 import com.kaleblangley.more_iron_spell.common.init.register.AttributeInit;
 import com.kaleblangley.more_iron_spell.common.init.register.ItemInit;
 import com.kaleblangley.more_iron_spell.common.init.register.SchoolInit;
@@ -28,6 +29,10 @@ public class EnglishLanguageProvider extends LanguageProvider {
         SpellInit.SPELL.getEntries().forEach(batchCase());
 
         curiosLang(ItemTagInit.MAGIC_TOOL_CURIOS);
+
+        add(TranslateInit.MAGIC_INFO, "\u00A78Magic Info");
+        add(TranslateInit.MAGIC_ID, "\u00A77Magic:");
+        add(TranslateInit.MAGIC_LEVEL, "\u00A77Magic Level:");
     }
 
     private void curiosLang(TagKey<?> tagKey) {

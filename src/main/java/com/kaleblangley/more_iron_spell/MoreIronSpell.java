@@ -1,10 +1,7 @@
 package com.kaleblangley.more_iron_spell;
 
 import com.kaleblangley.more_iron_spell.common.init.TranslateInit;
-import com.kaleblangley.more_iron_spell.common.init.register.AttributeInit;
-import com.kaleblangley.more_iron_spell.common.init.register.ItemInit;
-import com.kaleblangley.more_iron_spell.common.init.register.SchoolInit;
-import com.kaleblangley.more_iron_spell.common.init.register.SpellInit;
+import com.kaleblangley.more_iron_spell.common.init.register.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -25,6 +22,8 @@ public class MoreIronSpell {
         AttributeInit.register(modEventBus);
         SchoolInit.register(modEventBus);
         SpellInit.register(modEventBus);
+        TabInit.register(modEventBus);
+
         TranslateInit.init();
     }
 

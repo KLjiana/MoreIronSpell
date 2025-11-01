@@ -8,21 +8,21 @@ import io.redspace.ironsspellbooks.api.spells.AutoSpellConfig;
 import io.redspace.ironsspellbooks.api.spells.CastType;
 import io.redspace.ironsspellbooks.api.spells.SpellRarity;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvent;
-
-import java.util.Optional;
 
 @AutoSpellConfig
-public class LightningBomb extends AbstractSpell {
+public class LightningBombSpell extends AbstractSpell {
     private static final ResourceLocation SPELL_ID = MoreIronSpell.modLoc("lightning_bomb");
     private final DefaultConfig defaultConfig = new DefaultConfig()
             .setMinRarity(SpellRarity.RARE)
             .setMaxLevel(5)
             .setSchoolResource(SchoolRegistry.LIGHTNING_RESOURCE)
-            .setCooldownSeconds(400)
+            .setCooldownSeconds(40)
             .build();
 
-    public LightningBomb() {
+    public LightningBombSpell() {
+        this.baseManaCost = 50;
+        this.manaCostPerLevel = -5;
+        this.baseSpellPower = 8;
         this.castTime = 40;
     }
 
@@ -38,6 +38,6 @@ public class LightningBomb extends AbstractSpell {
 
     @Override
     public CastType getCastType() {
-        return CastType.LONG;
+        return CastType.INSTANT;
     }
 }
