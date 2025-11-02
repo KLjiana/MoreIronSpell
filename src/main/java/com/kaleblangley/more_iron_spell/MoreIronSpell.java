@@ -23,6 +23,7 @@ public class MoreIronSpell {
         SchoolInit.register(modEventBus);
         SpellInit.register(modEventBus);
         TabInit.register(modEventBus);
+        EntityInit.register(modEventBus);
 
         TranslateInit.init();
     }

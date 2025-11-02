@@ -31,8 +31,8 @@ public class EnglishLanguageProvider extends LanguageProvider {
         curiosLang(ItemTagInit.MAGIC_TOOL_CURIOS);
 
         add(TranslateInit.MAGIC_INFO, "\u00A78Magic Info");
-        add(TranslateInit.MAGIC_ID, "\u00A77Magic:");
-        add(TranslateInit.MAGIC_LEVEL, "\u00A77Magic Level:");
+        add(TranslateInit.MAGIC_MODID, "\u00A78Magic Mod:%s");
+        add(TranslateInit.MAGIC_ID, "\u00A78Magic ID:%s");
     }
 
     private void curiosLang(TagKey<?> tagKey) {

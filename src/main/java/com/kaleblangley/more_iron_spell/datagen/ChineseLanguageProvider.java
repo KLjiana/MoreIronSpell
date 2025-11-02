@@ -31,8 +31,8 @@ public class ChineseLanguageProvider extends LanguageProvider {
         curiosLang(ItemTagInit.MAGIC_TOOL_CURIOS, "\u9B54\u5BFC\u5177");
 
         add(TranslateInit.MAGIC_INFO, "\u00A78\u9B54\u6CD5\u4FE1\u606F");
-        add(TranslateInit.MAGIC_ID, "\u00A77魔法：");
-        add(TranslateInit.MAGIC_LEVEL, "\u00A77魔法等级：");
+        add(TranslateInit.MAGIC_MODID, "\u00A78\u9B54\u6CD5\u6A21\u7EC4\uFF1A%s");
+        add(TranslateInit.MAGIC_ID, "\u00A78\u9B54\u6CD5ID\uFF1A%s");
     }
 
     private void curiosLang(TagKey<?> tagKey, String value) {

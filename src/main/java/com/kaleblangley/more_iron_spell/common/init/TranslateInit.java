@@ -10,7 +10,7 @@ public class TranslateInit {
     //TOOLTIPS
     public static final String MAGIC_INFO = tooltipsKey("magic_info");
     public static final String MAGIC_ID = tooltipsKey("magic_id");
-    public static final String MAGIC_LEVEL = tooltipsKey("magic_level");
+    public static final String MAGIC_MODID = tooltipsKey("magic_modid");
 
     private static String schoolKey(String value) {
         return key("school", value);
