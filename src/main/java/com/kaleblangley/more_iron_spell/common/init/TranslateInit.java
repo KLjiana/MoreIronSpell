@@ -6,6 +6,7 @@ import com.kaleblangley.more_iron_spell.MoreIronSpell;
 public class TranslateInit {
     public static void init() {}
     public static final String ORIGIN_SCHOOL = schoolKey("original");
+    public static final String CREATIVE_TAB = key("tab", "tab");
 
     //TOOLTIPS
     public static final String MAGIC_INFO = tooltipsKey("magic_info");

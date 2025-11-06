@@ -21,12 +21,13 @@ public class EnglishLanguageProvider extends LanguageProvider {
         super(output, MoreIronSpell.MODID, "en_us");
     }
 
+    //TODO test
     @Override
     protected void addTranslations() {
-        ItemInit.ITEM.getEntries().forEach(batchCase());
-        AttributeInit.ATTRIBUTE.getEntries().forEach(batchCase());
-        SchoolInit.SCHOOL.getEntries().forEach(batchCase());
-        SpellInit.SPELL.getEntries().forEach(batchCase());
+        ItemInit.ITEM.getEntries().forEach(this::batchCase);
+        AttributeInit.ATTRIBUTE.getEntries().forEach(this::batchCase);
+        SchoolInit.SCHOOL.getEntries().forEach(this::batchCase);
+        SpellInit.SPELL.getEntries().forEach(this::spellLang);
 
         curiosLang(ItemTagInit.MAGIC_TOOL_CURIOS);
 
@@ -35,13 +36,22 @@ public class EnglishLanguageProvider extends LanguageProvider {
         add(TranslateInit.MAGIC_ID, "\u00A78Magic ID:%s");
     }
 
+    private void spellLang(RegistryObject<?> object) {
+        String path = object.getId().toLanguageKey("spell");
+        add(path, toTitleCase(object));
+    }
+
     private void curiosLang(TagKey<?> tagKey) {
         String path = tagKey.location().getPath();
         add("curios.identifier.%s".formatted(path), toTitleCase(path));
     }
 
-    private Consumer<RegistryObject<?>> batchCase() {
-        return object -> add(object.getId().toLanguageKey(object.getKey().registry().getPath()), toTitleCase(object.getId().getPath()));
+    private void batchCase(RegistryObject<?> object) {
+        add(object.getId().toLanguageKey(object.getKey().registry().getPath()), toTitleCase(object));
+    }
+
+    private static String toTitleCase(RegistryObject<?> object) {
+        return toTitleCase(object.getId().getPath());
     }
 
     private static String toTitleCase(String raw) {

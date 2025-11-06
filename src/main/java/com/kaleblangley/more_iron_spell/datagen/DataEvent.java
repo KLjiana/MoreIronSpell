@@ -22,6 +22,7 @@ public class DataEvent {
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
         generator.addProvider(event.includeServer(), new CuriosProvider(packOutput, existingFileHelper, lookupProvider));
 
+        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ChineseLanguageProvider(packOutput));
         generator.addProvider(event.includeClient(), new EnglishLanguageProvider(packOutput));
     }
